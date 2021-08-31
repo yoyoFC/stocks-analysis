@@ -67,6 +67,11 @@ After comparing the individual stocks results to the average between the 2017-20
 For this case, refactoring the code made the VBA script run faster. After comparing both codes, the difference lays on where the nested for loops are executed. 
 
   - Code designed for the Modules: The main loop is based on the number of tickers and the secondary loop (internal) is running through the row of the raw data. Once the secondary   loop is completed, the results are written on the cells. Then, the logic continues with the main for loop. It seems like this process increases the time because the main loop     sequence is interrupted to perfmon an action directly on the worksheet.
+
+  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131443944-8d84d91a-c042-46e0-a116-64b39a6d7f82.png">
  
   - Code designed for the Challenge: In this case, the main loop runs over the raw data and the internal secondary loop goes through the 11 stocks. The most important detail for     this solution is how the results are stored in VBA arrays. The results are written at the end of all the sequence over the excel cells.
   This method could reduce the execution time because the loops are not interrupted during their internal sequence. 
+ 
+  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131443953-e943db6d-53f8-4d22-869b-a96043b8e528.png">
+
