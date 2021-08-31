@@ -5,7 +5,7 @@ To accomplish this goal, I will provide a code designed in VBA as a mechanism to
 
 ## Results
 ### Stock Ticker ranking and suggestions
-After comparing the individual stocks results to the average between the 2017-2018 period, I can rank the ticker stocks to provide investment advice.
+After comparing the individual stocks results and the average between the 2017-2018 period, I can rank the ticker stocks to provide investment advice.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131441155-2054b725-8e36-4b9c-9a7c-304b2c3acacc.png">
 
@@ -47,8 +47,8 @@ After comparing the individual stocks results to the average between the 2017-20
   
   |   Year    |   Code - Module Section  | Second Header |
   |   :---:   |           :---:          |    :---:      |
-  |   2017    |           0.593          |    0.531      |   
-  |   2018    |           0.578          |    0.523      |  
+  |   2017    |           0.632          |    0.531      |   
+  |   2018    |           0.592          |    0.523      |  
   
   The code structure for this week’s challenge turns out to be slightly more efficient in comparison to the code developed during the module section. I will elaborate a hypothesis   of the possible reasons for this result on the Summary section.  
 
@@ -67,11 +67,19 @@ After comparing the individual stocks results to the average between the 2017-20
 For this case, refactoring the code made the VBA script run faster. After comparing both codes, the difference lays on where the nested for loops are executed. 
 
   - Code designed for the Modules: The main loop is based on the number of tickers and the secondary loop (internal) is running through the row of the raw data. Once the secondary   loop is completed, the results are written on the cells. Then, the logic continues with the main for loop. It seems like this process increases the time because the main loop     sequence is interrupted to perfmon an action directly on the worksheet.
-
-  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131443944-8d84d91a-c042-46e0-a116-64b39a6d7f82.png">
  
+    >Challenge results 2017 - 2018
+
+  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131445053-e1ce4395-f363-4829-8481-91ffa4eaa8aa.png">
+  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131445059-ae5393fa-49c0-4a9e-a35e-e6f3144e3861.png">
+  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131443944-8d84d91a-c042-46e0-a116-64b39a6d7f82.png">
+
   - Code designed for the Challenge: In this case, the main loop runs over the raw data and the internal secondary loop goes through the 11 stocks. The most important detail for     this solution is how the results are stored in VBA arrays. The results are written at the end of all the sequence over the excel cells.
   This method could reduce the execution time because the loops are not interrupted during their internal sequence. 
  
-  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131443953-e943db6d-53f8-4d22-869b-a96043b8e528.png">
+    >Challenge results 2017 - 2018
+
+  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131444485-2fbfa589-37b4-46d1-99a7-0475ad021e20.png">
+  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131444490-03524984-aa65-415e-8d3e-cb574b66c5dc.png">
+  <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131445353-df0fd365-bd55-47b9-b728-b3f14a495ee6.png">
 
