@@ -66,7 +66,7 @@ After comparing the individual stocks results and the average between the 2017-2
 ### Refactoring Code - Advantages and disadvantages
 For this case, refactoring the code made the VBA script run faster. After comparing both codes, the difference lays on where the nested for loops are executed. 
 
-  - Code designed for the Modules: The main loop is based on the number of tickers and the secondary loop (internal) is running through the row of the raw data. Once the secondary   loop is completed, the results are written on the cells. Then, the logic continues with the main for loop. It seems like this process increases the time because the main loop     sequence is interrupted to perfmon an action directly on the worksheet.
+  - Code designed for the Modules: The main loop is based on the number of tickers and the secondary loop (internal) is running through the rows of the raw data. Once the           secondary loop is completed, the results are written on the cells. Then, the logic continues with the main for loop. It seems like this process increases the time because the     main loop sequence is interrupted to perfmon an action directly on the worksheet.
  
     >Challenge results 2017 - 2018
 
@@ -74,7 +74,7 @@ For this case, refactoring the code made the VBA script run faster. After compar
   <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131445059-ae5393fa-49c0-4a9e-a35e-e6f3144e3861.png">
   <p align="center"><img src="https://user-images.githubusercontent.com/88695570/131443944-8d84d91a-c042-46e0-a116-64b39a6d7f82.png">
 
-  - Code designed for the Challenge: In this case, the main loop runs over the raw data and the internal secondary loop goes through the 11 stocks. The most important detail for     this solution is how the results are stored in VBA arrays. The results are written at the end of all the sequence over the excel cells.
+  - Code designed for the Challenge: In this case, the main loop runs over the raw data and the internal secondary loop goes through the 11 stocks. The most important detail for     this solution is how the results are stored in VBA arrays. The results are written at the end of both FOR loops (end of sequence) over the excel cells.
   This method could reduce the execution time because the loops are not interrupted during their internal sequence. 
  
     >Challenge results 2017 - 2018
